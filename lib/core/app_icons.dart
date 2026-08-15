@@ -6,4 +6,10 @@ class AppIcons {
   static const icCart = '${iconsPath}ic_cart.svg';
   static const icUser = '${iconsPath}ic_user.svg';
 
+  //pngs
+  static const microphoneImg = '${iconsPath}microphone_img.png';
+  static const wirelessHeadphones1 = '${iconsPath}premium_wireless_headphones.png';
+  static const wirelessHeadphones2 = '${iconsPath}premium_wireless_headphones_amber.png';
+
+
 }
