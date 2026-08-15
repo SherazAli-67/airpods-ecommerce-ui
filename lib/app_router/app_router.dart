@@ -1,8 +1,10 @@
+import 'package:airpods_app/core/models/product_model.dart';
 import 'package:airpods_app/presentation/screens/browse_screen.dart';
 import 'package:airpods_app/presentation/screens/cart_screen.dart';
 import 'package:airpods_app/presentation/screens/favorites_screen.dart';
 import 'package:airpods_app/presentation/screens/home_screen.dart';
 import 'package:airpods_app/presentation/screens/main_menu_page.dart';
+import 'package:airpods_app/presentation/screens/product_detail_screen.dart';
 import 'package:airpods_app/presentation/screens/profile_screen.dart';
 import 'package:airpods_app/welcome_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +31,9 @@ GoRouter appRouter = GoRouter(
       ]),
     ],
     builder: (ctx, state, navigationShell) => MainMenuPage(navigationShell: navigationShell)
-    )
+    ),
+
+    GoRoute(path: NamedRoutes.productDetail.routeName, builder: (_, state) => ProductDetailScreen(product: state.extra as ProductModel)),
   ],
 );
 
@@ -41,6 +45,7 @@ enum NamedRoutes{
   favorites('/favorites'),
   cart('/cart'),
   profile('/profile'),
+  productDetail('/product-detail')
   ;
   final String routeName;
   const NamedRoutes(this.routeName);

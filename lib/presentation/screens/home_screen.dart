@@ -1,3 +1,4 @@
+import 'package:airpods_app/app_router/app_router.dart';
 import 'package:airpods_app/constants/string_const.dart';
 import 'package:airpods_app/core/app_colors.dart';
 import 'package:airpods_app/core/app_data.dart';
@@ -5,7 +6,7 @@ import 'package:airpods_app/core/app_icons.dart';
 import 'package:airpods_app/core/app_textstyles.dart';
 import 'package:airpods_app/core/models/product_model.dart';
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import '../widgets/favorite_icon_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -100,36 +101,41 @@ class HomeScreen extends StatelessWidget {
                       ), itemBuilder: (ctx, index) {
 
                       ProductModel product = AppData.products[index];
-                        return Column(
-                          crossAxisAlignment: .start,
-                          spacing: 8,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.secondaryBgColor,
-                                borderRadius: .circular(24)
+                        return GestureDetector(
+                          onTap: ()=> context.push(NamedRoutes.productDetail.routeName, extra:  product),
+                          child: Column(
+                            crossAxisAlignment: .start,
+                            spacing: 8,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: AppColors.secondaryBgColor,
+                                  borderRadius: .circular(24)
+                                ),
+                                padding: .all(8),
+                                child: Stack(
+                                  children: [
+                                    Hero(
+                                        tag: product.productImg,
+                                        child: Image.asset(product.productImg, fit: .cover,)),
+                                    Align(
+                                      alignment: .topRight,
+                                      child: FavoriteIconWidget(),
+                                    ),
+                                  ],
+                                ),
                               ),
-                              padding: .all(8),
-                              child: Stack(
+                              Column(
+                                crossAxisAlignment: .start,
+                                spacing: 4,
                                 children: [
-                                  Image.asset(product.productImg, fit: .cover,),
-                                  Align(
-                                    alignment: .topRight,
-                                    child: FavoriteIconWidget(),
-                                  ),
+                                  Text('\$${product.price}', style: AppTextStyles.subHeadingTextStyle.copyWith(fontWeight: .bold, fontSize: 18),),
+                                  Text(product.title, style: AppTextStyles.regularTextStyle.copyWith(fontWeight: .w600),),
+                                  Text(product.modelName, style: AppTextStyles.regularTextStyle.copyWith(color: AppColors.greyColor),),
                                 ],
-                              ),
-                            ),
-                            Column(
-                              crossAxisAlignment: .start,
-                              spacing: 4,
-                              children: [
-                                Text('\$${product.price}', style: AppTextStyles.subHeadingTextStyle.copyWith(fontWeight: .bold, fontSize: 18),),
-                                Text(product.title, style: AppTextStyles.regularTextStyle.copyWith(fontWeight: .w600),),
-                                Text(product.modelName, style: AppTextStyles.regularTextStyle.copyWith(color: AppColors.greyColor),),
-                              ],
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         );
                   }))
                 ],
