@@ -2,12 +2,13 @@ import 'package:airpods_app/presentation/screens/browse_screen.dart';
 import 'package:airpods_app/presentation/screens/cart_screen.dart';
 import 'package:airpods_app/presentation/screens/favorites_screen.dart';
 import 'package:airpods_app/presentation/screens/home_screen.dart';
+import 'package:airpods_app/presentation/screens/main_menu_page.dart';
 import 'package:airpods_app/presentation/screens/profile_screen.dart';
 import 'package:airpods_app/welcome_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter appRouter = GoRouter(
-  initialLocation: NamedRoutes.welcome.routeName,
+  initialLocation: NamedRoutes.home.routeName,
   routes: [
     GoRoute(path: NamedRoutes.welcome.routeName, builder: (_, state) => WelcomeScreen()),
     StatefulShellRoute.indexedStack(branches: [
@@ -26,8 +27,9 @@ GoRouter appRouter = GoRouter(
       StatefulShellBranch(routes: [
         GoRoute(path: NamedRoutes.profile.routeName, builder: (_, state)=> ProfileScreen())
       ]),
-
-    ])
+    ],
+    builder: (ctx, state, navigationShell) => MainMenuPage(navigationShell: navigationShell)
+    )
   ],
 );
 
