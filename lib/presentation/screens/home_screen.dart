@@ -95,24 +95,41 @@ class HomeScreen extends StatelessWidget {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: 10,
-                          crossAxisSpacing: 10), itemBuilder: (ctx, index) {
+                          crossAxisSpacing: 10,
+                        childAspectRatio: 0.6
+                      ), itemBuilder: (ctx, index) {
 
                       ProductModel product = AppData.products[index];
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: AppColors.secondaryBgColor,
-                            borderRadius: .circular(24)
-                          ),
-                          padding: .all(8),
-                          child: Stack(
-                            children: [
-                              Image.asset(product.productImg),
-                              Align(
-                                alignment: .topRight,
-                                child: FavoriteIconWidget(),
+                        return Column(
+                          crossAxisAlignment: .start,
+                          spacing: 8,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.secondaryBgColor,
+                                borderRadius: .circular(24)
                               ),
-                            ],
-                          ),
+                              padding: .all(8),
+                              child: Stack(
+                                children: [
+                                  Image.asset(product.productImg, fit: .cover,),
+                                  Align(
+                                    alignment: .topRight,
+                                    child: FavoriteIconWidget(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: .start,
+                              spacing: 4,
+                              children: [
+                                Text('\$${product.price}', style: AppTextStyles.subHeadingTextStyle.copyWith(fontWeight: .bold, fontSize: 18),),
+                                Text(product.title, style: AppTextStyles.regularTextStyle.copyWith(fontWeight: .w600),),
+                                Text(product.modelName, style: AppTextStyles.regularTextStyle.copyWith(color: AppColors.greyColor),),
+                              ],
+                            )
+                          ],
                         );
                   }))
                 ],
