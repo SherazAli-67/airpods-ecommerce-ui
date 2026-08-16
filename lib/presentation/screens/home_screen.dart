@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Align(
                               alignment: .topRight,
-                              child: FavoriteIconWidget(),
+                              child: FavoriteIconWidget(product: AppData.products.first,),
                             ),
                             Row(
                               children: [

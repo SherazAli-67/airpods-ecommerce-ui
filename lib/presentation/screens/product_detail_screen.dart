@@ -29,28 +29,34 @@ class ProductDetailScreen extends StatelessWidget{
                 const SizedBox(width: 40,)
               ],
             ),
-            Stack(
-              children: [
-                Align(
-                  alignment: .center,
-                  child: Hero(
-                    tag: product.productImg,
-                    child: Image.asset(product.productImg, fit: .cover, height: size.height*0.4,),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.secondaryBgColor,
+                borderRadius: .circular(24)
+              ),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: .center,
+                    child: Hero(
+                      tag: product.productImg,
+                      child: Image.asset(product.productImg, fit: .cover, height: size.height*0.4,),
+                    ),
                   ),
-                ),
-                Positioned(
-                  right: 30,
-                  bottom: 20,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      FavoriteIconWidget(),
-                      FavoriteIconWidget(icon: AppIcons.icCart,),
+                  Positioned(
+                    right: 10,
+                    bottom: 10,
+                    child: Column(
+                      spacing: 15,
+                      children: [
+                        FavoriteIconWidget(product: product,),
+                        FavoriteIconWidget(icon: AppIcons.icCart, product: product,),
 
-                    ],
-                  ),
-                )
-              ],
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
             Column(
               crossAxisAlignment: .start,

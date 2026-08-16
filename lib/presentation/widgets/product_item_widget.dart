@@ -36,7 +36,7 @@ class ProductItemWidget extends StatelessWidget {
                     child: Image.asset(product.productImg, fit: .cover,)),
                 Align(
                   alignment: .topRight,
-                  child: FavoriteIconWidget(),
+                  child: FavoriteIconWidget(product: product,),
                 ),
               ],
             ),
