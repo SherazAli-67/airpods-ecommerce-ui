@@ -1,4 +1,5 @@
 import 'package:airpods_app/core/app_icons.dart';
+import 'package:airpods_app/core/models/cart_item_model.dart';
 import 'package:airpods_app/core/models/product_model.dart';
 
 class AppData {
@@ -23,5 +24,12 @@ class AppData {
     ProductModel(id: '10',productImg: AppIcons.headphonesGreen, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Green', price: 349.99),
     ProductModel(id: '11',productImg: AppIcons.speaker, title: 'Speaker', modelName: 'Model: WH-1000XM4, Blue', price: 99.99),
     ProductModel(id: '12',productImg: AppIcons.airPodsMax, title: 'Apple AirPods Max', modelName: 'Model: Apple AirPods Max', price: 99.99),
+  ];
+
+  static List<CartItemModel> get cartItems => [
+    CartItemModel(id: '1', product: ProductModel(id: '13',productImg: AppIcons.headphonesRed, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Red', price: 349.99), quantity: 1),
+    CartItemModel(id: '2', product: ProductModel(id: '14',productImg: AppIcons.headphonesYellow, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Yellow', price: 349.99), quantity: 1),
+    CartItemModel(id: '3', product: ProductModel(id: '15',productImg: AppIcons.speaker, title: 'Speaker', modelName: 'Model: WH-1000XM4, Blue', price: 99.99), quantity: 1),
+    CartItemModel(id: '4', product: ProductModel(id: '16',productImg: AppIcons.airPodsMax, title: 'Apple AirPods Max', modelName: 'Model: Apple AirPods Max', price: 99.99), quantity: 1),
   ];
 }
