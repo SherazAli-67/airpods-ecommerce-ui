@@ -1,6 +1,8 @@
 import 'package:airpods_app/core/app_colors.dart';
+import 'package:airpods_app/core/app_data.dart';
 import 'package:airpods_app/core/app_textstyles.dart';
 import 'package:airpods_app/presentation/widgets/app_back_btn.dart';
+import 'package:airpods_app/presentation/widgets/product_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class BrowseScreen extends StatelessWidget {
@@ -52,7 +54,15 @@ class BrowseScreen extends StatelessWidget {
             
               ],
             ),
-          )
+          ),
+          Expanded(child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.6,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10),
+            itemBuilder: (ctx, index) => ProductItemWidget(product: AppData.browsingProducts[index]),
+            itemCount: AppData.browsingProducts.length,))
         ],
       ),
     );
