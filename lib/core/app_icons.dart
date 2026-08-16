@@ -12,4 +12,11 @@ class AppIcons {
   static const wirelessHeadphones2 = '${iconsPath}premium_wireless_headphones_amber.png';
 
 
+  static const headphonesBlue = '${iconsPath}headphones_blue.png';
+  static const headphonesGreen = '${iconsPath}headphones_green.png';
+  static const headphonesGrey = '${iconsPath}headphones_grey.png';
+  static const headphonesPurple = '${iconsPath}headphones_purple.png';
+  static const headphonesRed = '${iconsPath}headphones_red.png';
+  static const headphonesYellow = '${iconsPath}headphones_yellow.png';
+
 }

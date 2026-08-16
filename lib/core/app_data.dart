@@ -8,10 +8,12 @@ class AppData {
 
   
   static List<ProductModel> get products => [
-    ProductModel(productImg: AppIcons.wirelessHeadphones1, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Black', price: 349.99),
-    ProductModel(productImg: AppIcons.wirelessHeadphones2, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Beige', price: 349.99),
-    // ProductModel(productImg: AppIcons.wirelessHeadphones2, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Beige', price: 349.99),
-    // ProductModel(productImg: AppIcons.wirelessHeadphones1, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Black', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesBlue, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Blue', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesGreen, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Green', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesGrey, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Grey', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesPurple, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Purple', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesRed, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Red', price: 349.99),
+    ProductModel(productImg: AppIcons.headphonesYellow, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Yellow', price: 349.99),
 
   ];
 }
