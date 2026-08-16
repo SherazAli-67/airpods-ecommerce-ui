@@ -6,6 +6,8 @@ import 'package:airpods_app/core/models/product_model.dart';
 import 'package:airpods_app/presentation/widgets/favorite_icon_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/app_back_btn.dart';
+
 class ProductDetailScreen extends StatelessWidget{
   const ProductDetailScreen({super.key, required this.product});
   final ProductModel product;
@@ -19,16 +21,7 @@ class ProductDetailScreen extends StatelessWidget{
           spacing: 24,
           crossAxisAlignment: .start,
           children: [
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                GestureDetector(
-                    onTap: ()=> Navigator.pop(context),
-                    child: Icon(Icons.arrow_back,)),
-                Text("Headphones", style: AppTextStyles.subHeadingTextStyle,),
-                const SizedBox(width: 40,)
-              ],
-            ),
+            AppBackBtn(),
             Container(
               decoration: BoxDecoration(
                 color: AppColors.secondaryBgColor,

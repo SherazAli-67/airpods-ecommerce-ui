@@ -19,4 +19,10 @@ class AppIcons {
   static const headphonesRed = '${iconsPath}headphones_red.png';
   static const headphonesYellow = '${iconsPath}headphones_yellow.png';
 
+
+  static const airPods = '${iconsPath}air_pods.png';
+  static const earPhones = '${iconsPath}earphones.png';
+  static const speaker = '${iconsPath}speaker.png';
+  static const airPodsMax = '${iconsPath}airpods_max.png';
+
 }
