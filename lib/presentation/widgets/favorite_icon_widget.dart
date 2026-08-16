@@ -9,10 +9,12 @@ class FavoriteIconWidget extends StatelessWidget {
   const FavoriteIconWidget({
     super.key,
     required this.product,
-    this.icon
+    this.icon,
+    this.bgColor
   });
   final ProductModel product;
   final String? icon;
+  final Color? bgColor;
   @override
   Widget build(BuildContext context) {
     return  Consumer<FavoritesProvider>(builder: (ctx, provider, _){
@@ -21,7 +23,7 @@ class FavoriteIconWidget extends StatelessWidget {
         child: Container(
             decoration: BoxDecoration(
               shape: .circle,
-              color: AppColors.whiteColor,
+              color: bgColor ?? AppColors.whiteColor,
             ),
             padding: .all(8),
             child: icon != null ? SvgPicture.asset(icon!) : provider.isFavorite(product.id) ? Icon(Icons.favorite, color: Colors.black,) :  Icon(Icons.favorite_border_rounded)
