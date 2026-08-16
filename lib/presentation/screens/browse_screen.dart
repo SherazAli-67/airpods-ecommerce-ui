@@ -1,3 +1,4 @@
+import 'package:airpods_app/constants/string_const.dart';
 import 'package:airpods_app/core/app_colors.dart';
 import 'package:airpods_app/core/app_data.dart';
 import 'package:airpods_app/core/app_textstyles.dart';
@@ -55,14 +56,38 @@ class BrowseScreen extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.6,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10),
-            itemBuilder: (ctx, index) => ProductItemWidget(product: AppData.browsingProducts[index]),
-            itemCount: AppData.browsingProducts.length,))
+          Expanded(child: Column(
+            crossAxisAlignment: .start,
+            spacing: 8,
+            children: [
+              Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  Text("13,134 products", style: AppTextStyles.smallTextStyle.copyWith(color: AppColors.greyColor),),
+                  RichText(text: TextSpan(
+                    text: "Sort by ", 
+                    style: AppTextStyles.smallTextStyle.copyWith(color: AppColors.greyColor, fontFamily: StringConst.appFontFamily,),
+                    children: [
+                      TextSpan(
+                        text: "Relevance",
+                        style: AppTextStyles.smallTextStyle.copyWith(color: Colors.black, fontFamily: StringConst.appFontFamily, fontWeight: .bold),
+                      )
+                    ]
+                  ))
+                ],
+              ),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.6,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10),
+                  itemBuilder: (ctx, index) => ProductItemWidget(product: AppData.browsingProducts[index]),
+                  itemCount: AppData.browsingProducts.length,),
+              ),
+            ],
+          ))
         ],
       ),
     );

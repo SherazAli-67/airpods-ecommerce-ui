@@ -32,7 +32,7 @@ class ProductItemWidget extends StatelessWidget {
             child: Stack(
               children: [
                 Hero(
-                    tag: product.productImg,
+                    tag: '${product.productImg}_${product.id}',
                     child: Image.asset(product.productImg, fit: .cover,)),
                 Align(
                   alignment: .topRight,

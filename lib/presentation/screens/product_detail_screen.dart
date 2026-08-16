@@ -32,7 +32,7 @@ class ProductDetailScreen extends StatelessWidget{
                   Align(
                     alignment: .center,
                     child: Hero(
-                      tag: product.productImg,
+                      tag: '${product.productImg}_${product.id}',
                       child: Image.asset(product.productImg, fit: .cover, height: size.height*0.4,),
                     ),
                   ),
@@ -44,7 +44,6 @@ class ProductDetailScreen extends StatelessWidget{
                       children: [
                         FavoriteIconWidget(product: product,),
                         FavoriteIconWidget(icon: AppIcons.icCart, product: product,),
-
                       ],
                     ),
                   )

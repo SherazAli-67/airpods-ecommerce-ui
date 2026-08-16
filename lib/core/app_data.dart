@@ -17,10 +17,10 @@ class AppData {
   ];
 
   static List<ProductModel> get browsingProducts => [
-    ProductModel(id: '1', productImg: AppIcons.headphonesBlue, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Blue', price: 349.99),
-    ProductModel(id: '2',productImg: AppIcons.headphonesGreen, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Green', price: 349.99),
-    ProductModel(id: '3',productImg: AppIcons.airPods, title: 'AirPods Pro', modelName: 'Model: AirPods Pro, White', price: 99.9),
-    ProductModel(id: '4',productImg: AppIcons.earPhones, title: 'Earphones', modelName: 'Model: Earphones, White', price: 49.9),
+    ProductModel(id: '1',productImg: AppIcons.airPods, title: 'AirPods Pro', modelName: 'Model: AirPods Pro, White', price: 99.9),
+    ProductModel(id: '2',productImg: AppIcons.earPhones, title: 'Earphones', modelName: 'Model: Earphones, White', price: 49.9),
+    ProductModel(id: '3', productImg: AppIcons.headphonesBlue, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Blue', price: 349.99),
+    ProductModel(id: '4',productImg: AppIcons.headphonesGreen, title: 'SONY Premium Wireless Headphones', modelName: 'Model: WH-1000XM4, Green', price: 349.99),
     ProductModel(id: '5',productImg: AppIcons.speaker, title: 'Speaker', modelName: 'Model: WH-1000XM4, Blue', price: 99.99),
     ProductModel(id: '6',productImg: AppIcons.airPodsMax, title: 'Apple AirPods Max', modelName: 'Model: Apple AirPods Max', price: 99.99),
   ];
